@@ -1,0 +1,728 @@
+/**
+ * Revista Bicicleta Template Styles v2
+ * Basado en el diseño definitivo proporcionado
+ */
+
+/* Variables CSS actualizadas */
+:root {
+    --revista-primary: #e74c3c;        /* Rojo para títulos y números */
+    --revista-secondary: #3498db;      /* Azul para subtítulos y botones */
+    --revista-accent: #f39c12;         /* Naranja para botones "Leer más" */
+    --revista-green: #27ae60;          /* Verde para patrocinadores y footer */
+    --revista-green-dark: #229954;     /* Verde oscuro para footer */
+    --revista-salmon: #ffeaa7;         /* Color salmón/durazno para hero */
+    --revista-gray-light: #ecf0f1;     /* Gris claro para secciones */
+    --revista-white: #ffffff;          /* Blanco */
+    --revista-dark: #2c3e50;           /* Texto oscuro */
+    --revista-gray: #7f8c8d;           /* Gris medio */
+    
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Poppins', 'Inter', sans-serif;
+    
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* Reset y base */
+.revista-bicicleta-v2-template {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--revista-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section v2 */
+.hero-section-v2 {
+    background: var(--revista-salmon);
+    padding: 60px 0;
+    min-height: 400px;
+}
+
+.hero-content-v2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-magazines {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.magazine-item {
+    flex: 1;
+}
+
+.magazine-item.secondary {
+    flex: 0.7;
+    margin-top: 20px;
+}
+
+.magazine-cover {
+    background: var(--revista-white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.magazine-cover.patrimonio {
+    background: linear-gradient(135deg, #81ecec 0%, #74b9ff 100%);
+    color: var(--revista-white);
+}
+
+.magazine-cover.dark {
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+    color: var(--revista-white);
+    min-height: 200px;
+}
+
+.magazine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.magazine-logo {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.magazine-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.magazine-illustration {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.illustration-content {
+    width: 80px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-content::before {
+    content: "🏛️";
+    font-size: 24px;
+}
+
+.dark-illustration {
+    width: 60px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin: 20px auto;
+}
+
+.hero-text-v2 {
+    text-align: center;
+    padding-left: 40px;
+}
+
+.hero-title-v2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--revista-dark);
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.bicycle-icon {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Ediciones Anteriores Header */
+.ediciones-header {
+    background: var(--revista-gray-light);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.section-title-gray {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--revista-dark);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--revista-secondary);
+    margin: 0 auto;
+}
+
+/* HOY EN CKURI Section */
+.hoy-en-ckuri-section {
+    background: var(--revista-white);
+    padding: 60px 0;
+}
+
+.section-title-dark {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--revista-dark);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.article-item {
+    background: var(--revista-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.article-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 20px;
+}
+
+.article-content h3 {
+    font-size: 1.2rem;
+    color: var(--revista-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.article-subtitle {
+    font-size: 0.9rem;
+    color: var(--revista-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.article-description {
+    font-size: 0.95rem;
+    color: var(--revista-gray);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.btn-leer-mas {
+    background: var(--revista-accent);
+    color: var(--revista-white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.btn-leer-mas:hover {
+    background: #e67e22;
+    transform: translateY(-1px);
+}
+
+/* Revista Info Section */
+.revista-info-section {
+    background: var(--revista-white);
+    padding: 60px 0;
+}
+
+.revista-info-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.revista-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--revista-primary);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.revista-subtitle {
+    font-size: 1.3rem;
+    color: var(--revista-secondary);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.revista-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--revista-dark);
+}
+
+.magazine-cover-large {
+    background: linear-gradient(135deg, #81ecec 0%, #74b9ff 100%);
+    color: var(--revista-white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.magazine-header-large {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.magazine-logo-large {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.magazine-title-large {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.magazine-illustration-large {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-content-large {
+    width: 120px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-content-large::before {
+    content: "🏛️";
+    font-size: 36px;
+}
+
+/* Ediciones Anteriores Section */
+.ediciones-anteriores-section {
+    background: var(--revista-gray-light);
+    padding: 60px 0;
+}
+
+.section-headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-title-left {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--revista-dark);
+    font-weight: 600;
+}
+
+.section-title-center {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--revista-dark);
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+}
+
+.revistas-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.revista-card {
+    background: var(--revista-white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.revista-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.revista-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.revista-brand {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--revista-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.revista-numero-circle {
+    background: var(--revista-primary);
+    color: var(--revista-white);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.revista-cover-small-v2 {
+    width: 80px;
+    height: 100px;
+    background: var(--revista-gray-light);
+    border-radius: 4px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-illustration-small {
+    width: 40px;
+    height: 40px;
+    background: var(--revista-secondary);
+    border-radius: 4px;
+}
+
+.revista-info-v2 h3 {
+    font-size: 1rem;
+    color: var(--revista-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.revista-date {
+    font-size: 0.85rem;
+    color: var(--revista-gray);
+    margin-bottom: 5px;
+}
+
+.revista-edition {
+    font-size: 0.8rem;
+    color: var(--revista-gray);
+    margin-bottom: 10px;
+}
+
+.revista-info-v2 h4 {
+    font-size: 0.9rem;
+    color: var(--revista-dark);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.btn-leer-revista {
+    background: var(--revista-secondary);
+    color: var(--revista-white);
+    padding: 6px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.btn-leer-revista:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* Patrocinadores Section */
+.patrocinadores-section {
+    background: var(--revista-green);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.patrocinadores-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--revista-white);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.patrocinadores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.patrocinador-placeholder {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    border-radius: var(--border-radius);
+    color: var(--revista-white);
+    font-weight: 500;
+}
+
+/* Footer */
+.revista-footer {
+    background: var(--revista-green-dark);
+    padding: 40px 0;
+    color: var(--revista-white);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-info {
+    margin-bottom: 30px;
+}
+
+.footer-info p {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--revista-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--revista-salmon);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content-v2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .hero-magazines {
+        justify-content: center;
+    }
+    
+    .hero-text-v2 {
+        padding-left: 0;
+    }
+    
+    .hero-title-v2 {
+        font-size: 1.8rem;
+    }
+    
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .revista-info-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .revistas-grid-v2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-headers {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-section-v2 {
+        padding: 40px 0;
+    }
+    
+    .hero-magazines {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .magazine-item.secondary {
+        margin-top: 0;
+    }
+    
+    .hero-title-v2 {
+        font-size: 1.5rem;
+    }
+    
+    .revista-title {
+        font-size: 2rem;
+    }
+    
+    .revista-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .patrocinadores-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.revista-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.revista-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.revista-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.article-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.article-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+/* Compatibilidad con Twenty Twenty-Five */
+.wp-site-blocks .revista-bicicleta-v2-template {
+    padding: 0;
+}
+
+.revista-bicicleta-v2-template .container {
+    max-width: min(1200px, 100vw - 2rem);
+}
+
+/* Mejoras de accesibilidad */
+.btn-leer-mas:focus,
+.btn-leer-revista:focus {
+    outline: 2px solid var(--revista-secondary);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .patrocinadores-section,
+    .revista-footer {
+        display: none;
+    }
+    
+    .hero-section-v2 {
+        background: white !important;
+    }
+    
+    .btn-leer-mas,
+    .btn-leer-revista {
+        display: none;
+    }
+}
+
